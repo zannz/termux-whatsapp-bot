@@ -392,7 +392,7 @@ async function starts() {
 					ownerB: '[❗] Perintah ini hanya bisa di gunakan oleh owner bot! ❌',
 					admin: '[❗] Perintah ini hanya bisa di gunakan oleh admin group! ❌',
 					Badmin: '[❗] Perintah ini hanya bisa di gunakan ketika bot menjadi admin! ❌',
-                                        daftarB: `──「 BELUM REGISTER 」──\nHalo kak !\nKamu belum Register nih, register dulu yuk... \n\nCommand : ${prefix}register nama|umur\nContoh : ${prefix}register Nazwa|16`,
+                                        daftarB: `──「 NÃO REGISTRADO 」──\nOlá !\nVocê ainda não está registrado!, para se registrar use o seguinte comando... \n\nComando : ${prefix}register nome|idade\nExemplo : ${prefix}register Zannz|14`,
 				}
 			}
     			const apakah = ['Ya','Tidak']
@@ -472,7 +472,7 @@ async function starts() {
                     for (let lmt of _limit) {
                         if (lmt.id === sender) {
                             limitCounts = limitawal - lmt.limit
-                            if (limitCounts <= 0) return client.sendMessage(from,`Limit request anda sudah habis\n\n_Note : Limit akan direset setiap jam 21:00!_`, text,{ quoted: mek})
+                            if (limitCounts <= 0) return client.sendMessage(from,`Você atingiu o seu limite de solicitação!\n\n_Note : O limite será resetado todo dia as 05:00 _`, text,{ quoted: mek})
                             client.sendMessage(from, ind.limitcount(limitCounts), text, { quoted : mek})
                             found = true
                         }
@@ -656,7 +656,7 @@ async function starts() {
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('𝐓𝐚𝐠 𝐭𝐚𝐫𝐠𝐞𝐭 𝐲𝐚𝐧𝐠 𝐦𝐚𝐮 𝐝𝐢 𝐭𝐮𝐫𝐮𝐧𝐤𝐚𝐧 𝐚𝐝𝐦𝐢𝐧')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Mencione quem deseja Rebaixar!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = ''
@@ -667,7 +667,7 @@ async function starts() {
 						mentions(teks, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					} else {
-						mentions(`𝐏𝐞𝐫𝐢𝐧𝐭𝐚𝐡 𝐝𝐢𝐭𝐞𝐫𝐢𝐦𝐚, 𝐦𝐞𝐧𝐮𝐫𝐮𝐧𝐤𝐚𝐧 @${mentioned[0].split('@')[0]}\n 𝐣𝐚𝐝𝐢 𝐚𝐝𝐦𝐢𝐧 𝐠𝐫𝐨𝐮𝐩 _*${groupMetadata.subject}*_`, mentioned, true)
+						mentions(`Agora @${mentioned[0].split('@')[0]}\n não é mais admin do grupo: _*${groupMetadata.subject}*_`, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
@@ -697,17 +697,17 @@ async function starts() {
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di promote!')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Mencione quem deseja promover!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Perintah di terima, menambah jabatan sebagai admin :\n'
+						teks = 'Promovendo a admin do grupo :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 						}
 						mentions(teks, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					} else {
-						mentions(`Perintah di terima, menambah jabatan sebagai admin : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Agora @${mentioned[0].split('@')[0]} é um admin do grupo`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break
@@ -749,8 +749,8 @@ async function starts() {
                 break
               case 'owner':
                 case 'creator':
-                  client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-               client.sendMessage(from, 'Nih nomor ownerku kak, save ya kak nanti di save balik',MessageType.text, { quoted: mek} )
+                  client.sendMessage(from, {displayname: "Zannz", vcard: vcard}, MessageType.contact, { quoted: mek})
+               client.sendMessage(from, 'Salve o contato do meu dono!',MessageType.text, { quoted: mek} )
                 break
 	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
