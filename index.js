@@ -376,22 +376,22 @@ async function starts() {
                         const q = args.join(' ')
 
 			mess = {
-				wait: '⌛ Sedang di Prosess ⌛',
-				success: '✔️ Berhasil ✔️',
+				wait: '⌛ Aguarde... ⌛',
+				success: '✔️ Sucesso! ✔️',
                                 levelon: '❬ ✔ ❭ *enable leveling*',
 				leveloff: ' ❬ X ❭  *disable leveling*',
 				levelnoton: '❬ X ❭ *leveling not aktif*',
 				levelnol: '*LEVEL KAKAK MASIH* 0 °-°',
 				error: {
-					stick: '[❗] Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker ❌',
-					Iv: '❌ Link tidak valid ❌'
+					stick: '[❗] Falha, ocorreu um erro ao converter a imagem em um figurinha ❌',
+					Iv: '❌ O Link é inválido ❌'
 				},
 				only: {
-					group: '[❗] Perintah ini hanya bisa di gunakan dalam group! ❌',
-					ownerG: '[❗] Perintah ini hanya bisa di gunakan oleh owner group! ❌',
-					ownerB: '[❗] Perintah ini hanya bisa di gunakan oleh owner bot! ❌',
-					admin: '[❗] Perintah ini hanya bisa di gunakan oleh admin group! ❌',
-					Badmin: '[❗] Perintah ini hanya bisa di gunakan ketika bot menjadi admin! ❌',
+					group: '[❗] Este comando só pode ser usado em grupos!! ❌',
+					ownerG: '[❗] Este comando só pode ser usado pelo proprietário do grupo! ❌',
+					ownerB: '[❗] Este comando só pode ser usado pelo proprietário do bot! ❌',
+					admin: '[❗] Este comando só pode ser usado por administradores do grupo! ❌',
+					Badmin: '[❗] Este comando só pode ser usado quando o bot se torna administrador! ❌',
                                         daftarB: `──「 NÃO REGISTRADO 」──\nOlá !\nVocê ainda não está registrado!, para se registrar use o seguinte comando... \n\nComando : ${prefix}register nome|idade\nExemplo : ${prefix}register Zannz|14`,
 				}
 			}
@@ -422,8 +422,8 @@ async function starts() {
                         pushname = client.contacts[sender] != undefined ? client.contacts[sender].vname || client.contacts[sender].notify : undefined
 
                         // Options
-                        const botName = 'BOT_NAME'
-                        const ownerName = 'OWNER_NAME'
+                        const botName = 'Zannz Bot'
+                        const ownerName = 'Zannz'
                         const BarBarKey = 'YOUR_APIKEY'
 
 			const isUrl = (url) => {
